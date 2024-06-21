@@ -8,5 +8,5 @@ if vim.g.neovide then
   vim.g.neovide_padding_right = padding
   vim.g.neovide_padding_left = padding
 
-  vim.o.guifont = "GeistMono Nerd Font Mono,GeistMono Nerd Font:h16"
+  vim.o.guifont = "GeistMono Nerd Font:h16"
 end
