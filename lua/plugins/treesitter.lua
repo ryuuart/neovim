@@ -3,12 +3,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     auto_install = true,
+    opts_extend = { "ensure_installed" },
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
       ensure_installed = {
         "bash",
         "c",
+        "cmake",
+        "cpp",
         "diff",
         "html",
         "javascript",
@@ -35,6 +38,18 @@ return {
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
-    end,    
+    end,
+    textobjects = {
+      move = {
+        enable = true,
+        goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
+        goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+        goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
+        goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+      },
+    },
+  },
+  {
+    "windwp/nvim-ts-autotag",
   },
 }
