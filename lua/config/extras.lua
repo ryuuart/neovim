@@ -1,2 +1,6 @@
 -- Prepend mise shims to PATH
-vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+if vim.fn.has("win32") == 1 then
+  vim.env.PATH = vim.env.LOCALAPPDATA .. "\\mise\\shims;" .. vim.env.PATH
+else
+  vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+end
