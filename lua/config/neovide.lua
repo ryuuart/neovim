@@ -1,6 +1,6 @@
 if vim.g.neovide then
   vim.g.neovide_window_blurred = true
-  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_opacity = 0.8
   vim.g.neovide_cursor_animation_length = 0.04
 
   local padding = 16
